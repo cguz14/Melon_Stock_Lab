@@ -19,7 +19,6 @@ class MelonType:
         self.is_seedeless = is_seedless
         self.is_bestseller = is_bestseller
 
-
         # Fill in the rest
 
     def add_pairing(self, pairing):
@@ -37,8 +36,21 @@ def make_melon_types():
     """Returns a list of current melon types."""
 
     all_melon_types = []
+    muskmelon = MelonType("musk", 1998, "Green", True, True, "Muskmelon")
+    muskmelon.add_pairing("mint")
 
-    # Fill in the rest
+    casaba = MelonType("cas", 2003, "Orange", False, False, "Casaba")
+    casaba.add_pairing("strawberries")
+    casaba.add_pairing("mint")
+    # print(casaba.pairings)
+
+    crenshaw = MelonType("cren", 1996, "Green", False, False, "Crenshaw")
+    crenshaw.add_pairing("prosciutto")
+
+    yellow_watermelon = MelonType("yw", 2013, "Yellow", False, True, "Yellow Watermelon")
+    yellow_watermelon.add_pairing("ice cream")
+
+    all_melon_types = [muskmelon, casaba, crenshaw, yellow_watermelon]
 
     return all_melon_types
 
@@ -46,6 +58,13 @@ def make_melon_types():
 def print_pairing_info(melon_types):
     """Prints information about each melon type's pairings."""
 
+    for melon in melon_types:
+        pairs = ""
+        pairs = ' and '.join(melon.pairings)
+        print(f'{melon.name} pairs with {pairs}.')
+        
+
+    ## ' '.join(list)
     # Fill in the rest
 
 
