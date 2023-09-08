@@ -125,9 +125,15 @@ def get_sellability_report(melons):
     """Given a list of melon object, prints whether each one is sellable."""
 
     for melon in melons:
-        if melon.is_sellable():
-            print(f"Melon {melon.harvestNumber} harvested by {melon.harvester}",
-                f"from Field {melon.field} -> CAN BE SOLD. MMMMMMelon!")
-        else:
-            print(f"Melon {melon.harvestNumber} harvested by {melon.harvester}",
-                f"from Field {melon.field} -> CAN NOT BE SOLD. Don't Sell!")
+        melonNum = f"Melon {melon.harvestNumber}"
+        harvestedBy = f"harvested by {melon.harvester}"
+        field = f"from Field {melon.field}"
+        sellable = f"-- CAN BE SOLD" if melon.is_sellable() else f"-- NOT SELLABLE"
+
+        print(f"{melonNum} {harvestedBy} {field} {sellable}")
+        # if melon.is_sellable():
+        #     print(f"Melon {melon.harvestNumber} harvested by {melon.harvester}",
+        #         f"from Field {melon.field} -> CAN BE SOLD. MMMMMMelon!")
+        # else:
+        #     print(f"Melon {melon.harvestNumber} harvested by {melon.harvester}",
+        #         f"from Field {melon.field} -> CAN NOT BE SOLD. Don't Sell!")
